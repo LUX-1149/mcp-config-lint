@@ -1,4 +1,5 @@
-const COMMAND_SENSITIVE_SEGMENT = /((?:token|secret|password|api[_-]?key|apikey|private[_-]?key|client[_-]?secret|access[_-]?key)\s*(?:=|\s)\s*)(["']?)([^\s"']+)(\2)/gi;
+const COMMAND_SENSITIVE_EQUALS_SEGMENT = /(\b(?:token|secret|password|api[_-]?key|apikey|private[_-]?key|client[_-]?secret|access[_-]?key)\b\s*=\s*)(["']?)([^\s"']+)(\2)/gi;
+const COMMAND_SENSITIVE_SPACE_SEGMENT = /(\b(?:token|secret|password|api[_-]?key|apikey|private[_-]?key|client[_-]?secret|access[_-]?key)\b\s+)(["']?)([^\s"']+)(\2)/gi;
 const TOKEN_PREFIX_SEGMENT = /(ghp_|github_pat_|glpat-|xoxb-|xoxp-|AKIA|ASIA|sk-)([A-Za-z0-9_-]+)/g;
 
 export function redactWithLength(value: string): string {
@@ -60,7 +61,11 @@ export function isClearlyPlaceholderPath(value: string): boolean {
 export function maskCommandString(command: string): string {
   let masked = command;
 
-  masked = masked.replace(COMMAND_SENSITIVE_SEGMENT, (_full, prefix: string, quote: string, value: string) => {
+  masked = masked.replace(COMMAND_SENSITIVE_EQUALS_SEGMENT, (_full, prefix: string, quote: string, value: string) => {
+    return `${prefix}${quote}${redactWithLength(value)}${quote}`;
+  });
+
+  masked = masked.replace(COMMAND_SENSITIVE_SPACE_SEGMENT, (_full, prefix: string, quote: string, value: string) => {
     return `${prefix}${quote}${redactWithLength(value)}${quote}`;
   });
 
