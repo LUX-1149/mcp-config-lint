@@ -204,6 +204,22 @@ function isDocOrConfigPath(filePath) {
   return lower === "readme" || lower === "readme.md";
 }
 
+function isGitHubNoreplyEmail(rawEmail) {
+  const normalized = (rawEmail || "").trim().toLowerCase();
+  const at = normalized.lastIndexOf("@");
+  if (at <= 0 || at === normalized.length - 1) {
+    return false;
+  }
+
+  const localPart = normalized.slice(0, at);
+  const domain = normalized.slice(at + 1);
+  if (!localPart || localPart.includes(" ")) {
+    return false;
+  }
+
+  return domain === "users.noreply.github.com";
+}
+
 function scanGitIdentity() {
   if (!runLocal) {
     return;
@@ -211,7 +227,7 @@ function scanGitIdentity() {
 
   const emailResult = runGit(["config", "--get", "user.email"], true);
   const email = emailResult.stdout.trim();
-  if (!emailResult.ok || !email || !email.includes("noreply.github.com")) {
+  if (!emailResult.ok || !isGitHubNoreplyEmail(email)) {
     addFinding(
       "LOCAL_GIT_EMAIL",
       "git user.email must be set to a GitHub noreply address for local checks.",
