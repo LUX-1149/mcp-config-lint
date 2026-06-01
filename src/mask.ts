@@ -73,4 +73,4 @@ export function maskCommandString(command: string): string {
   }
 
   return masked;
-}`r`n
+}
