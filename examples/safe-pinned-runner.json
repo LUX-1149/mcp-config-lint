@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "exampleRunner": {
+      "command": "npx -y example-runner@1.2.3",
+      "args": [
+        "--config",
+        "./config/example.json"
+      ],
+      "env": {
+        "PROFILE": "test"
+      }
+    }
+  }
+}

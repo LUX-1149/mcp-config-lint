@@ -1,0 +1,5 @@
+{
+  // malformed on purpose
+  "mcpServers": {
+    "broken": {
+      "command": "node"

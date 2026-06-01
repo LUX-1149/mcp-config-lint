@@ -1,0 +1,14 @@
+{
+  // Sanitized JSONC example for local testing.
+  "mcpServers": {
+    "jsoncExample": {
+      "command": "node",
+      "args": [
+        "./tools/example-jsonc-server.js",
+      ],
+      "env": {
+        "TOKEN_PLACEHOLDER": "${EXAMPLE_TOKEN}",
+      },
+    },
+  },
+}

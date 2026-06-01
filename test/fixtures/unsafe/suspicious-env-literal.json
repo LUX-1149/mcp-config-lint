@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "entropy": {
+      "command": "node",
+      "env": {
+        "session_blob": "A1B2C3D4E5F6G7H8I9J0K1L2M3N4P5Q6"
+      }
+    }
+  }
+}

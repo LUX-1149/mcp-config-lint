@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "exampleServer": {
+      "command": "node",
+      "args": [
+        "./tools/example-server.js"
+      ],
+      "env": {
+        "API_KEY": "${EXAMPLE_TOKEN}",
+        "MODE": "example"
+      }
+    }
+  }
+}

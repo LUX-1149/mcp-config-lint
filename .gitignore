@@ -1,0 +1,69 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor/workspace data
+.vscode/
+.idea/
+*.code-workspace
+*.sublime-*
+
+# Dependency/build/cache output
+node_modules/
+dist/
+build/
+coverage/
+.nyc_output/
+.turbo/
+.cache/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Package artifacts
+*.tgz
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+
+# Keys/certs/credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.csr
+*.kdbx
+secrets/
+credentials/
+private/
+*.secret*
+*.token*
+
+# npm credentials
+.npmrc
+
+# AI/editor local state
+.cursor/
+.claude/
+.codex/
+.continue/
+.aider*
+.windsurf/
+AGENTS.local.md
+CLAUDE.local.md
+
+# Generated LLM context dumps
+CONTEXT.md
+context.md
+repo-context*.md
+chatgpt-export*
+copilot-chat*

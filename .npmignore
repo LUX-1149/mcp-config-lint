@@ -1,0 +1,28 @@
+# Source and tests
+src/
+test/
+tests/
+fixtures/
+coverage/
+
+# Repository and development-only directories
+.github/
+scripts/
+examples/
+.vscode/
+.idea/
+
+# Development artifacts
+*.ts
+*.map
+**/*.map
+*.tgz
+
+# Local secrets and credentials
+.env*
+.npmrc
+
+# Privacy and local agent docs
+PRIVACY_SECURITY_CHECKLIST.md
+AGENTS.md
+.github/copilot-instructions.md

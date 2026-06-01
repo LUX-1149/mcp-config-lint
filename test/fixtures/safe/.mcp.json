@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "safePlaceholders": {
+      "command": "node",
+      "args": [
+        "./tools/example-server.js"
+      ],
+      "env": {
+        "API_KEY": "${EXAMPLE_TOKEN}",
+        "CLIENT_SECRET": "process.env.CLIENT_SECRET",
+        "EMPTY_SECRET": "",
+        "MASKED": "<REDACTED>",
+        "MODE": "test"
+      }
+    }
+  }
+}

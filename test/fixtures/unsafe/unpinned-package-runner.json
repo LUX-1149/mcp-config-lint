@@ -1,0 +1,7 @@
+{
+  "servers": {
+    "runner": {
+      "command": "npx -y example-runner"
+    }
+  }
+}

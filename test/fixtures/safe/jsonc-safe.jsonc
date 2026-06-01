@@ -1,0 +1,14 @@
+{
+  // safe JSONC for parser tests
+  "mcpServers": {
+    "jsoncSafe": {
+      "command": "node",
+      "args": [
+        "./tools/safe-jsonc.js",
+      ],
+      "env": {
+        "TOKEN_PLACEHOLDER": "${EXAMPLE_TOKEN}",
+      },
+    },
+  },
+}

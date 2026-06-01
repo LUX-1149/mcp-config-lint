@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "safePinnedRunner": {
+      "command": "npx -y example-runner@1.2.3",
+      "args": [
+        "--preview"
+      ],
+      "env": {
+        "CONFIG_MODE": "example"
+      }
+    }
+  }
+}

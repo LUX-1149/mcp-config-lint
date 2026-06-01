@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "privileged": {
+      "command": "sudo chown root:root /tmp/example"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+* text=auto eol=lf
+
+# Common binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tgz binary
+*.jar binary
+*.p12 binary
+*.pfx binary
+*.crt binary
+*.pem binary

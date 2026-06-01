@@ -1,0 +1,64 @@
+name: Bug report
+description: Report a bug with sanitized details only.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before submitting:
+        - Do not paste real secrets.
+        - Redact MCP configs.
+        - Replace local paths with placeholders.
+        - Use example.com for domains.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What is wrong?
+      placeholder: Short, sanitized bug summary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Reproduction steps
+      description: Steps to reproduce using only sanitized data.
+      placeholder: |
+        1. Run mcp-config-lint ...
+        2. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Sanitized MCP config snippet
+      description: Remove secrets and personal details before posting.
+      render: json
+      placeholder: |
+        {
+          "mcpServers": {
+            "exampleServer": {
+              "command": "node",
+              "args": ["./tools/example-server.js"],
+              "env": {
+                "API_KEY": "${EXAMPLE_TOKEN}"
+              }
+            }
+          }
+        }
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: mcp-config-lint version
+      placeholder: 0.1.0
+    validations:
+      required: true

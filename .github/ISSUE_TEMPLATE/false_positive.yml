@@ -1,0 +1,50 @@
+name: False positive report
+description: Report a rule false positive with a minimal sanitized config.
+title: "false-positive: "
+labels:
+  - false-positive
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Safety reminder:
+        - No real secrets.
+        - No personal paths or hostnames.
+        - Use sanitized, minimal examples only.
+
+  - type: input
+    id: rule
+    attributes:
+      label: Rule ID
+      description: Which rule flagged this?
+      placeholder: hardcoded-env-secret
+    validations:
+      required: true
+
+  - type: textarea
+    id: minimal
+    attributes:
+      label: Minimal sanitized config
+      description: Include only the smallest repro, fully sanitized.
+      render: json
+      placeholder: |
+        {
+          "mcpServers": {
+            "exampleServer": {
+              "command": "node",
+              "env": {
+                "API_KEY": "${EXAMPLE_TOKEN}"
+              }
+            }
+          }
+        }
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Why this should be allowed
+      description: Explain why the report is a false positive.
+    validations:
+      required: true
